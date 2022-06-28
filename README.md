@@ -1,33 +1,26 @@
-# MacLockDesktop
-This project is used to lock the desktop image of an Apple computer.
+# Wallpaper change blocker
 
-I have searched the webs to find the best method to lock down the background on Macs and this is the best. I origionally discovered this when 10.9 first came out and the origional source can be found [here](http://apple.stackexchange.com/questions/65938/how-to-restrict-changing-desktop-wallpaper).
+Left your mac unlocked, and see wallpaper changed?
+It's not a problem anymore, you can disappoint your friends.
 
-When a user attemps to change the desktop picture, it will let them, but it will get reverted back to the original after a few seconds.
+This project rollbacks any wallpaper change to macOS default one.
 
-This method also prevents users from right clicking in safari to change the background. 
+## Requirements
 
-I'm not sure if there's any performance issues with this method, so use with caution.
+- macOS Big Sur or newer (>11.x)
 
-## Supported OSes
-Tested with Mac OS X 10.9, 10.10 and 10.11.6 
-Thanks to Omar-L for testing it on 10.11.6
+## Installation
 
-#How-to
-1. Determine the image you want
-2. copy that image to `/Library/Desktop Pictures`
-3. Right click the image and `Set Desktop Picture`
-3. Copy com.stackexchange.apple.65938.plist to `/Library/LaunchAgents/`
-4. Open the plist with your choice of app. (Textwangler, xcode, etc)
-5. Replace `yourPictureFile.jpg` with the file name of picture.
-6. Don't forget to save.
-7. Run the two commands in the `commands` file. (sudo is required) No restart is needed.
+```bash
+git clone https://github.com/0x77dev/MacLockDesktopBackground
+```
 
-# The Commands
-**sudo chown root /Library/LaunchAgents/com.stackexchange.apple.65938.plist**
-Sets the plist permission to root, so no user can edit them.
+```bash
+MacLockDesktopBackground/install.sh
+```
 
-**sudo launchctl load /Library/LaunchAgents/com.stackexchange.apple.65938.plist**
-Has launchctl load the plist so it's listening.
+## Removal
 
-
+```bash
+MacLockDesktopBackground/uninstall.sh
+```
