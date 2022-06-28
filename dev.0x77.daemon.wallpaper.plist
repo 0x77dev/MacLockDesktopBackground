@@ -9,10 +9,7 @@
     <array>
         <string>osascript</string>
         <string>-e</string>
-        <string>tell application "Finder"
-set f to POSIX file "/System/Library/Desktop Pictures/macOS Graphic.heic"
-if desktop picture is not file f then set desktop picture to f
-end tell</string>
+        <string>tell application "System Events" to set picture of every desktop to "/System/Library/Desktop Pictures/macOS Graphic.heic"</string>
     </array>
     <key>StartInterval</key>
     <integer>1</integer>
